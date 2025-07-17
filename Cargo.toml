@@ -1,0 +1,18 @@
+[package]
+name = "keycloak-reqwest"
+description = "Reqwest middleware to obtain access token from keycloak"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+keywords= ["keycloak", "reqwest", "middleware", "auth"]
+categories = ["authentication"]
+authors = ["Manoj Periathambi <manojp1988@gmail.com>"]
+
+[dependencies]
+serde = { version = "1.0.215", features = ["derive",] }
+serde_json = { version = "1.0.133", default-features = false, features = ["alloc"] }
+reqwest = { version = "0.12.22", features = ["json"] }
+reqwest-middleware = { version = "0.4.2", features = ["json"] }
+http = "1.1"
+async-trait = "0.1"
+tracing = "0.1"
