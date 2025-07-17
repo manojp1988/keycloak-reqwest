@@ -69,14 +69,14 @@ impl Middleware for TokenMiddleware {
             token_guard.clone()
         };
         let token = if let Some(token) = token_opt {
-            tracing::debug!("Token returning from cache");
+            tracing::info!("Token returning from cache");
             token
         } else {
             let token = self.fetch_token().await;
             let mut token_guard = self.token_cache.lock().unwrap();
             *token_guard = token.clone();
 
-            tracing::debug!("Fetching new token from keycloak");
+            tracing::info!("Fetching new token from keycloak");
 
             token.unwrap_or_default()
         };
@@ -85,7 +85,7 @@ impl Middleware for TokenMiddleware {
                 AUTHORIZATION,
                 format!("Bearer {}", token).parse().unwrap(),
             );
-            tracing::debug!("Token set in request headers");
+            tracing::info!("Token set in request headers");
         }
         next.run(req, extensions).await
     }
