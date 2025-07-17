@@ -1,0 +1,1 @@
+This is the crate to be used as middleware for keycloak-reqwest

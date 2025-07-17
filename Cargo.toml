@@ -2,13 +2,15 @@
 name = "keycloak-reqwest"
 description = "Reqwest middleware to obtain access token from keycloak"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 keywords= ["keycloak", "reqwest", "middleware", "auth"]
 categories = ["authentication"]
 authors = ["Manoj Periathambi <manojp1988@gmail.com>"]
 repository = "https://github.com/manojp1988/keycloak-reqwest.git"
 readme = "README.md"
+documentation = "https://docs.rs/keycloak-reqwest"
+homepage = "https://github.com/manojp1988/keycloak-reqwest"
 
 [dependencies]
 serde = { version = "1.0.215", features = ["derive",] }
